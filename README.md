@@ -47,13 +47,13 @@ Cada cuenta, SA o módulo solo tiene los permisos mínimos necesarios.
 4. Resultado: maniobras concurrentes provocan un comando contradictorio que abre y cierra válvulas en paralelo —pérdida de integridad física—, generando derrames o daño en la planta.  
 5. Por ausencia de registro estructurado (no hay `terraform plan` ni PR con revisión), la reconstrucción forense es lenta y ambigua.
 
-**Cómo lo evita IaC+policy-as-code:** bloqueo del PR y del apply para cambios que rompan invariantes, detección de drift y remediación automatizada, RBAC que evita accesos peligrosos y logging claro de quién y cuándo hizo cambios (Actividad13, Actividad16, Actividad10, Actividad18).
+**Cómo lo evita IaC+policy-as-code:** bloqueo del PR y del apply para cambios que rompan invariantes, detección de drift y remediación automatizada, RBAC que evita accesos peligrosos y logging claro de quién y cuándo hizo cambios (que lo vimos en las actividades Actividad16, Actividad18).
 
 ---
 
 ### Evidencias mínimas que deben acompañar la respuesta (qué presentar)
 - `kubectl get all -n agua-inteligente` (estado actual de pods y deployments).  
-- `evidence/terraform_plan.txt` o `evidence/plan_diff.txt` (salida de `terraform plan -detailed-exitcode`). (Véase Actividad5 y Actividad16).  
+- `evidence/terraform_plan.txt` o `evidence/plan_diff.txt` (salida de `terraform plan -detailed-exitcode`). (lo vimos en la Actividad5 y Actividad16).  
 - `evidence/conftest_output.txt` (resultado de `conftest test` indicando bloqueo de regla). (Véase Actividad10).  
 - `evidence/k8s_rbac.yaml` y `evidence/k8s_netpols.yaml` (export de objetos Kubernetes). (Véase Actividad17 y Actividad18).  
 - Registro del remediado `evidence/remediation_<resource>.txt` producido por `safe_remediate.sh` (ejemplo en repo).

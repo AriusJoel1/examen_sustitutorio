@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: control-pdb
+  namespace: agua-inteligente
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: control
