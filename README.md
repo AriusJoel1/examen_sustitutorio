@@ -157,22 +157,39 @@ En sistemas de misión crítica que interactúan con infraestructura y component
 ### Estructura de carpetas (separación por responsabilidad)
 
 repo-iac/
+
 ├── modules/
+
 │ ├── network/
+
 │ ├── compute/
+
 │ ├── security/
+
 │ └── observability/
+
 ├── envs/
+
 │ ├── dev/
+
 │ ├── staging/
+
 │ └── prod/
+
 ├── policies/
+
 │ ├── conftest/
+
 │ └── opa/
+
 ├── scripts/
+
 │ ├── detect_drift.sh
+
 │ └── safe_remediate.sh
+
 ├── evidence/
+
 └── README.md
 
 
@@ -324,9 +341,13 @@ Este módulo define los recursos **fundacionales y de alta criticidad**, sobre l
 
 Ejemplo:
 modules/base/
+
 ├── network.tf
+
 ├── cluster.tf
+
 └── identity.tf
+
 
 
 ---
@@ -367,9 +388,13 @@ Este módulo agrega capacidades de observabilidad sin modificar el comportamient
 Ejemplo:
 
 modules/observability/
+
 ├── metrics.tf
+
 ├── logging.tf
+
 └── alerts.tf
+
 
 
 ---
@@ -409,8 +434,11 @@ Este módulo gestiona los componentes que **interactúan directa o indirectament
 
 Ejemplo:
 modules/control/
+
 ├── deployments.tf
+
 ├── rbac.tf
+
 ├── network
 
 
